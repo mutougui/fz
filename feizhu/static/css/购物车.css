@@ -1,0 +1,92 @@
+*{ margin: 0; padding: 0;}
+body{ margin: auto;}
+ul,li{ list-style: none;}
+a{ text-decoration: none;}
+a:hover{ color: red;}
+
+/*top部分*/
+._top{ width: 100%; background: #f5f5f5; border-top: 1px solid #aca899;}
+.top{ width: 1262px; height: 30px; background:#f5f5f5 ; line-height: 30px; margin: auto;border-bottom: 1px solid #aca899;}
+.top div:first-child{width: 402px; height: 30px; float: left; font-size: 12px; color: #666; margin-left:20px;}
+.top div:last-child{width: 420px; height: 30px; float: left; font-size: 12px;margin-left: 420px;}
+.top div:last-child a{color: #666;  border-right: 1px solid #ccc; padding-right: 10px;}
+.top div:last-child ul li{ float: left; padding: 0px 8px;}
+
+/*内容*/
+#content{width: 100%; height:auto;}
+#_content{width: 1200px; height:auto; /*overflow: hidden;*/ margin: auto;}
+#_content .con_top{width: 1200px; height: 140px; }
+#_content .con_top img:first-child{margin-top: 10px;}
+#_content .con_top img:nth-child(2){margin-left: 56px;}
+#_content .con_top .hd{width: 1200px; height: 28px; margin-top: 16px; position:relative;}
+#_content .con_top .hd h1{color: #666666; font-size: 18px; float: left; margin-top: 4px;}
+#_content .con_top .hd .pop{width: 260px; height: 26px; border: 1px solid #DDDDDD; float: left; color: #333333; font-size: 12px;margin-left: 24px;line-height: 26px;padding-left: 20px; background:#ffffe3;}
+#_content .con_top .hd .left{position: absolute;top: 11px; left: 75px;}
+#_content .con_top .hd .pop img{position: absolute;top: 2px; left: 410px; margin-top: 0px;}
+
+/*/表格*/
+#box .goods  .abc {width: 25%; height:24%;}
+#box{width: 1200px; height: 360px;}
+#box .boxtop{width: 1200px; height: 36px; border-top: 2px solid #c7012c;}
+#box .boxtop div{float: left;}
+#box .boxtop .boxtop1{width: 60px; height: 36px; text-align: center; line-height: 36px; border: 1px solid #dddddd; border-top: none;}
+#box .boxtop .boxtop2{width: 254px;height: 36px; text-align: center; line-height: 36px;border-bottom:1px solid #dddddd;}
+#box .boxtop .boxtop3{width: 308px;height: 36px; text-align: center; line-height: 36px;border-bottom:1px solid #dddddd;}
+#box .boxtop .boxtop4{width: 206px;height: 36px; text-align: center; line-height: 36px;border-bottom:1px solid #dddddd;}
+#box .boxtop .boxtop5{width: 116px;height: 36px; text-align: center; line-height: 36px;border-bottom:1px solid #dddddd;}
+#box .boxtop .boxtop6{width: 146px;height: 36px; text-align: center; line-height: 36px;border-bottom:1px solid #dddddd;}
+#box .boxtop .boxtop7{width: 107px;height: 36px; text-align: center; line-height: 36px;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd;}
+#boxul{width: 1200px; height: 100px;position: relative;}
+.box_ul{width: 1200px;height: auto;}
+#boxul li{float: left; text-align: center;line-height: 100px; /*display:inline-block;*/}
+#boxul .li1 {width: 60px;height: 100px; text-align: center;line-height: 100px;border: 1px solid #DDDDDD; border-top: none;}
+#boxul .li2{width: 216px; height: 100px;border-bottom: 1px solid #DDDDDD;}
+#boxul .li2 a img{width: 76px; height: 76px;}
+#boxul .li3{width: 378px; height: 100px;border-bottom: 1px solid #DDDDDD; }
+#boxul .li3 a{font-size: 12px; color: #666666;}
+#boxul .li4{width: 176px; height: 100px;border-bottom: 1px solid #DDDDDD;}
+#boxul .li4 input{text-align: center;line-height: 20px;}
+.jia{position: absolute; top: 42px;left: 771px; cursor: pointer;}
+.jian{position: absolute;top: 52px;left: 771px;cursor: pointer;}
+#qua{width: 50px; height: 20px; border: 1px solid #DDDDDD;}
+#boxul .li5{width: 100px; height: 100px ;border-bottom: 1px solid #DDDDDD; font-size: 12px; color: #666666;}
+#boxul .li6{width: 150px; height: 100px ;border-bottom: 1px solid #DDDDDD; font-size: 12px; color: #666666;}
+#boxul .li6 .tpp{color: red; font-size: 30px;}
+#boxul .li7{width: 117px; height: 100px ;border-bottom: 1px solid #DDDDDD; border-right: 1px solid #CCCCCC;}
+#list_total{height: 55px;border: 1px solid #DDDDDD; border-top: none; padding:0px 18px 0px 30px; text-align: right;position: relative;}
+#list_total .add_text{position: absolute;left: 4px; color: #FF0000; font-size: 12px; top: 18px;}
+#list_total .money{font-size: 20px; font-family: "microsoft yahei"; color: #333333; vertical-align: middle; width: 200px; height: 20px; display: block;margin-left: 926px;padding-top: 16px;}
+#list_total .money b{margin-left: 0px; width: 76px; height: 20px;display: inline-block;}
+#list_total .money em{color:#FF0000;}
+#list_total .money em b{font-weight: normal; font-style: normal;width: 20px; display: inline-block;}
+#list_total .money em .newTotal{ font-style: normal; display: inline-block;width: 50px; height: 20px;text-align: center;}
+#clearcart{height: 48px; position: relative;}
+#clearcart .laji{position: absolute; top: 4px; left: 10px;}
+#clearcart a{float: left; font-size: 12px; color: #666666; margin-left: 34px; margin-top: 8px;}
+#clearcart .going{cursor: pointer;margin-right: 20px; margin-top: 8px;text-align: center; line-height: 34px; width: 110px; height: 34px; border: 1px solid #CCCCCC; font-size: 14px; color: #666666; float: right; border-radius: 5%; font-weight: bold;}
+#clearcart .jiez{cursor: pointer;margin-top: 2px; width: 190px; height: 44px; background: #f87600;text-align: center; line-height: 44px; float: right;color: white; border-radius: 5%;}
+
+
+
+
+
+
+
+
+
+
+
+/*last部分*/
+#last{width: 100%; height: 88px;}
+#_last{width: 1200px; height:auto; overflow: hidden; margin: auto;}
+#_last .last_top,ul{width: 1200px; height: 24px;}
+#_last .last_top ul li{float: left; text-align: center;}
+#_last .last_top ul li a{display: block; width: 70px; height: 12px; border-right: 1px solid #999999;color: #333333;font-size: 12px;}
+#_last .last_bot{width: 1200px; height: 80px;margin-left: 12px;}
+#_last .last_bot div{color: #999999; font-size: 12px; cursor: pointer;}
+#_last .last_bot div:hover{color:#0066ff ;}
+#123{
+    width: 10px;
+    height: 20px;
+    display: block;
+}

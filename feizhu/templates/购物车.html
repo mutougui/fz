@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{% static 'css/购物车.css' %}" />
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>
+		<script type="text/javascript" src="{% static 'js/购物车.js' %}"></script>
+
+	</head>
+
+    <body>
+		<!--top部分-->
+		<div class="_top">
+			<div class="top">
+				<div class="top_left">
+        {% if username %}
+    <p>
+
+        用户名: {{ username }}
+    </p>
+    <a href="{% url 'fz:logout' %}">退出</a>
+        {% else %}
+    <div>
+        <a href="{% url 'fz:denglu' %}">登录</a>
+        <a href="{% url 'fz:zhuce' %}">注册</a>
+    </div>
+        {% endif %}
+                </div>
+                <div class="top_right">
+					<ul>
+						<li><a href="#">我的账户<img src="{% static 'img/下三角.png' %}"></a></li>
+						<li><a href="#">网站导航<img src="{% static 'img/下三角.png' %}"></a></li>
+						<li><a href="#">加入收藏</a></li>
+						<li><a href="#"><img src="{% static 'img/phone.png' %}">400&nbsp;883&nbsp;6900</a></li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+		
+		
+		<!--内容-->
+		<div id="content">
+			<div id="_content">
+				<div class="con_top">
+					<img src="{% static 'img/3.png' %}"><img src="{% static 'img/wodegouwuche.png' %}" />
+					<div class="hd">
+						<h1>我挑选的商品</h1>
+						<img src="{% static 'img/left.png' %}" class="left">
+						<div class="pop">
+							<img src="{% static 'img/XXX.png' %}" id="XXX">
+							飞虎自营：单笔订单满1毛钱免运费
+							<a href="#">查看详情</a> 
+						</div>
+					</div>
+				</div>
+
+
+				<!--表格-->
+				<div id="box">
+					<div class="boxtop">
+						<div class="boxtop1">
+							<input type="checkbox" class="chose"/><span>全选</span>
+						</div>
+						<div class="boxtop2">飞虎自营商品</div>
+						<div class="boxtop3">商品名称</div>
+						<div class="boxtop4">商品数量</div>
+						<div class="boxtop5">商品单价</div>
+						<div class="boxtop6">飞虎总价</div>
+						<div class="boxtop7">操作</div>
+					</div>
+					<div class="box_ul">
+                        {% for cart in carts %}
+            <div class="goods">
+
+                <img src="{% static  cart.goods.img %}" class="abc">
+                <div>
+                    <p class="top">名称:{{ cart.goods.p }}</p>
+                </div>
+                    <div>
+                        数量:x
+                        <span class="bottom" goodid={{ cart.goods.id }}>
+                        {{ cart.number }}
+                        </span>
+
+                        <font>价格:</font>
+                        <i class="goodprice">
+                        {{ cart.goods.span }}
+                        </i>
+                    </div>
+
+
+                    <span class="isselect" cartid={{ cart.id }}>
+                        <div class="goodsbox ok" cartisselect={{ cart.isselect }}>
+
+                        </div>
+                    </span>
+
+
+            </div>
+            {% endfor %}
+					</div>
+					
+					<div id="list_total">
+
+
+						<span class="money">
+							<b class="ab">总金额:</b>
+							<em>
+								<b></b>
+								<span class="newTotal"></span>
+							</em>
+						</span>
+						<span class="add_text">不同商家商品无法合并订单购买，请分别结算。</span>
+					</div>
+					<div id="clearcart">
+						<img src="{% static 'img/laji.png' %}" class="laji">
+						<a href="#">清空购物车</a>
+						<div class="jiez"><a href="{% url 'fz:generateoder' %}">去结算</a></div>
+                        <a href="{% url 'fz:sy' %}"><div class="going">继续购物</div></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+		<!--底部-->
+		<div id="foot">
+			<div id="_foot">
+				<div id="last">
+					<div id="_last">
+						<div class="last_top">
+							<ul>
+								<li><a href="#">常见问题</a></li>
+								<li><a href="#">法律说明</a></li>
+								<li><a href="#">联系客服</a></li>
+								<li><a href="#">新闻中心</a></li>
+								<li><a href="#">意见箱</a></li>
+							</ul>
+						</div>
+						<div class="last_bot">
+							<div>增值电信业务经营许可证：粤B2-20130551 | 网站备案：粤ICP备133245 |  食品流通许可证：SP4403112014007826</div>
+							
+							<div>食品流通许可证：SP1103021110002595 </div>
+							
+							 <div>Copyright © 2009-2016 深圳富金机网络科技有限公司.All Rights Reserved &nbsp;</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,703 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{ margin: 0; padding: 0;}
+			body{ margin: auto;}
+			ul,li{ list-style: none;}
+			a{ text-decoration: none;}
+			a:hover{ color: red;}
+			*{ font-size: 12px;}
+			/*top部分*/
+			._top{ width: 100%; background: #f5f5f5; border-top: 1px solid #aca899;}
+			.top{ width: 1262px; height: 30px; background:#f5f5f5 ; line-height: 30px; margin: auto;border-bottom: 1px solid #aca899;}
+			.top div:first-child{width: 402px; height: 30px; float: left; font-size: 12px; color: #666; margin-left:20px;}
+			.top div:last-child{width: 420px; height: 30px; float: left; font-size: 12px;margin-left: 420px;}
+			.top div:last-child a{color: #666;  border-right: 1px solid #ccc; padding-right: 10px;}
+			.top div:last-child ul li{ float: left; padding: 0px 8px;}
+			
+			
+			/*_header部分*/
+			._header{ width: 100%; height: 150px; background: white;}
+			.header{ width: 1200px; height: auto;overflow: hidden; margin: auto; position: relative;}
+			#hot{position: absolute;top:88px; left: 550px;z-index: 100;}
+			#new{position: absolute;top:88px; left: 456px;z-index: 100;}
+			.header .img1{ margin-top: 16px; display: inline-block; float: left;}
+			.search{ width: 432px; height: 32px; border: 1px solid #c7012c; float: left; margin-left: 85px; margin-top: 22px;}
+			.search_left .search_txt{ width: 350px; height: 28px; float: left;}
+			.search_right{ width:78px; height: 32px; background:#c7012c; float: left;text-align: center; line-height: 32px; font-size: 18px;}
+			.search_right a{color: white;}
+			.search_right a:hover{ color: red;}
+			.header_bott{ width: 1200px; height: 40px; margin-top: 100px;}
+			.header_bott .header_bott_left{width: 210px; height: 40px; background: #c7012c;top: 0px; left: 325px; border-radius:6% 0 0 0}
+			.header_bott .header_bott_left h2{padding-left: 18px; color: white; font-size: 16px; float: left; text-align: center; line-height: 40px;}
+			.header_bott .header_bott_left b{float: left; margin-right: 0px; margin-left: 56px; margin-top: 12px;}
+			.header .header_bott .a_img{position: absolute; left: 210px;top: 96px;}
+			.header_bott_right{width: 875px; height: 40px; background: #c7012c;position: absolute; top: 100px; left: 325px; border-radius:0 0 6% 0}
+			.header_bott_right .ul1 li{ float: left;}
+			.header_bott_right .ul1 li a{ display:block; color: white; border-left: 1px solid white; padding:0px 10px; margin-top: 10px;font-size: 18px;}
+			.header_bott_right .ul1 li a:hover{ color: red;}
+			.header_bott_right .ul2{ width: 196px; height: 24px; position: absolute; left: 660px; top:0px; margin-top: 8px;}
+			.header_bott_right .ul2 li:first-child{  width: 134px; height: 24px; background: #ffeede; float: left; text-align: center; line-height: 24px;}
+			.header_bott_right .ul2 li:nth-child(2){width: 62px; height: 24px; background: #ffbc22;float: left;text-align: center;line-height: 24px;}
+			.header_bott_right .ul2 li:first-child:first-child img{ float: left; margin-top: 2px; margin-left: 14px;}
+			
+
+			
+			/*content*/
+            .content .buyLast .num {width: 15px; height: 15px;}
+			.content{width: 100%; height: 620px; }
+			._content{width: 1200px; height: auto;overflow: hidden; margin: auto;}
+			._content .con_top{width: 1200px; height: 28px; border-bottom: 1px solid #dddddd; line-height: 28px;}
+			.con_top ul li{ float: left; padding-left: 8px;}			
+			.con_top ul li a{font-size: 13px; color: #666666; display: block; }
+			.con_top ul li:last-child a{color: #999999;}
+			.middle{ width: 1200px; height: 410px;}
+			.middle .mid_left{width: 300px; height: 400px; padding-top: 10px; float: left;}
+			.middle .mid_left .mid_box{ width: 300px; height: 300px; border: 1px solid #cccccc; }
+			.middle .mid_left .mid_box .list1{width: 280px; height: 280px;}
+			.middle .mid_left .mid_box .list1 li{width: 280px; height: 280px;margin-top: 10px; margin-left: 10px; position:relative}
+			.middle .mid_left .mid_box .list1 li img{width: 280px; height: 280px; }
+			.middle .mid_left .list2{ width: 300px; height: 90px;}
+			.middle .mid_left .list2 li{float: left; border: 1px solid #CCCCCC;width: 90px; height: 90px; margin-left: 5px;margin-top: 5px;}
+			.middle .mid_left .list2 li img{width: 80px; height: 80px; margin-left: 5px; padding-top: 5px; }
+			.mid_right{width: 900px; height: 410px;  float: left;}
+			.mid_right .right_1{ width: 880px; height: 68px; margin-left: 20px;margin-top: 10px; border-bottom: 1px dashed #cccccc;}
+			.mid_right .right_1 h1{font-size: 16px; font-weight: bolder; color: #333333;}
+			.mid_right .right_1 p{font-size: 18px; font-weight: bold; color:#ff0000; margin-top: 10px;}
+			.mid_right .right_2{width: 880px; height: 70px;margin-left: 20px; border-bottom: 1px dashed #cccccc;}
+			.mid_right .right_2 p{width: 150px; height: 40px; margin-top: 10px;}
+			.mid_right .right_2 p span:first-child{ color: #666666;}
+			.mid_right .right_2 p span:nth-child(2){color: #c7012c; font-size: 14px;}
+			.mid_right .right_2 p span:nth-child(3){color: #c7012c; font-size: 24px;}
+			.mid_right .right_3{ width: 880px; height: 156px;margin-left: 20px; border-bottom: 1px dashed #cccccc;}
+			.mid_right .right_3 img:first-child{ margin-top: 34px; }
+			.mid_right .right_3 img:nth-child(2){ margin-top: 34px;}
+			.mid_right .right_3 .x1{color: #666666; width: 210px; height: 16px; margin-left: 10px; margin-top: 18px;}
+			.mid_right .right_3 .x2{width: 800px; height: 40px; margin-left: 10px; line-height: 40px; margin-top: 6px;color: #666666;}
+			.mid_right .right_3 .x2 span{float: left;}
+			.mid_right .right_3 .x2 span:first-child{}
+			.mid_right .right_3 .x2 span:nth-child(2){display: block; width: 62px; height: 24px; border: 1px solid #dddddd;line-height: 24px;margin-top: 6px;}
+			.mid_right .right_3 .x2 span:nth-child(2) p{margin-left: 6px;}
+			.mid_right .right_3 .x2 span:nth-child(2) .icon{width: 14px; height: 14px; border: 1px solid #ccc; margin-top: 4px; margin-left: 40px; text-align: center;line-height: 14px;}
+			.mid_right .right_3 .x2 .vi{ color: red;}
+			.mid_right .right_3 .x3 span span{color: red;}
+			.mid_right .right_3 .x3{margin-left:{ } 10px; margin-top: 12px; color: #666666;}
+			.mid_right .right_3 .x4{width: 236px; height: 24px; margin-left: 6px;}
+			.mid_right .right_3 .x4 img{margin-top: 18px;}
+			/*放大镜*/
+			.middle .mid_left .mid_box .list1 li #smallArea{top: 0; left: 0;  display: none; width: 50px; height: 50px; background: rgba(123,211,98,0.3); position: absolute;  z-index: 99999;}
+			#bigArea{display: none; overflow: hidden; width: 300px; height: 300px; background: rgba(100,200,100, 0.3); position: absolute; left: 334px; top: 222px;}
+			#bigArea img:nth-child(2){display: none;}
+			#bigArea img:nth-child(3){display: none;}
+			#bigImg{position: absolute; left: 0; top: 0; width: 800px; height: 800px; z-index: 9999999;}
+			/*buy*/
+			#buy{position:relative; width: 882px; height: 266px; background: #f8f8f8;position: absolute;left: 350px; top: 530px;}
+			#buy .buyTop{width:500px; height: 62px; line-height: 34px;}
+			#buy .buyTop span:nth-child(2){border: 2px solid #c7012c; width: 64px; height: 24px;display: block;line-height: 24px;padding-left: 20px;}
+			#buy .buyTop span{float: left;margin-left: 18px; margin-top: 18px;}
+			#buy .buyCon{width: 450px; height: 50px;}
+			#buy .buyCon .chi{width: 200px;height: 36px;}
+			#buy .buyCon .sss{width: 80px; height: 30px; margin-left: 18px;padding-top: 16px;}
+			#buy .buyCon ul li{ width: 30px; height: 24px; border: 1px solid #dddddd; background: white;position: absolute;line-height: 24px;}
+			#buy .buyCon ul .s{top: 60px; left: 90px;padding-left: 20px;}
+			#buy .buyCon ul .m{top: 60px; left: 150px;padding-left: 20px;}
+			#buy .buyCon ul .l{top: 60px; left: 210px;padding-left: 20px;}
+			#buy .buyCon ul .xl{top: 60px; left: 270px;padding-left: 20px;}
+			#buy .buyLast{width: 250px; height: 30px;}
+			#buy .buyLast span:first-child{margin-left: 18px;}
+			#buy .buyLast span:nth-child(2){width: 12px; height: 20px; border: 1px solid #dddddd; display: block; background: f7f7f7; position: absolute; top: 108px;left: 90px;line-height: 20px;padding-left: 8px;}
+			#buy .buyLast span:nth-child(4){width: 12px; height: 20px; border: 1px solid #dddddd;display: block;background: f7f7f7; position: absolute; top: 108px;left: 180px;line-height: 20px;padding-left: 8px;}
+			#buy .buyLast span:nth-child(3){width: 34px; height: 20px; border: 1px solid #dddddd;display: block;background: white; position: absolute; top: 108px;left: 118px;line-height: 20px;padding-left: 20px;}
+			#buy .pp{width: 120px; height: 24px; color: red;font-weight: bold;margin-left: 18px; margin-top: 30px;}
+			#buy .buybot img:first-child{margin-left: 18px;}
+			#buy .buybot img:nth-child(2){margin-left: 20px;}
+			#buy .buybot span{width: 80px; height: 26px;}
+			
+			/*foot*/
+			#foot{width: 100%; height: 500px;}
+			#_foot{width: 1200px; height: auto;overflow: hidden; margin: auto;}
+			#_foot .foot_top{width: 1200px; height: 46px; border: 1px solid #dddddd;line-height: 46px; }
+			#_foot .foot_top h1,p{float: left;}
+			#_foot .foot_top h1{color: #dc4b5e; font-size: 20px; }
+			#_foot .foot_top .hh1{padding-left: 40px;}
+			#_foot .foot_top .hh2{padding-left: 150px;}
+			#_foot .foot_top .hh3{padding-left: 160px;}
+			
+			#_foot .foot_top p{color: #999999; font-size: 16px; font-weight: bold; padding-right: 52px; padding-left: 14px;}
+			#_foot .foot_content {width: 1200px; height: 170px;margin-top: 20px; line-height: 40px;}
+			#_foot .foot_content .fleft{ width: 250px; height: 160px;  float: left;text-align: center;}
+			#_foot .foot_content .fleft p{color: #999999;}
+			#_foot .foot_content .fleft p strong{font-size: 16px; color: #333333;}
+			#_foot .foot_content .fleft .f1,.f2{width:250px; height: 26px;}
+			#_foot .foot_content .fleft p em{color: #ff6600;}
+			#_foot .foot_content .fleft .phone{width: 250px; height: 88px;  margin-top: 10px;}
+			.fleft .phone img,p{float: left;}
+			.fleft .phone img{ padding-left: 16px; padding-right: 14px;}
+			#_foot .foot_content .fright{width: 950px; height: 150px;  float: left;}
+			#_foot .foot_content .fright dl{float: left; width: 140px; height: 150px; border-left:1px solid #dddddd; margin-left: 46px;}
+			#_foot .foot_content .fright dl dt{color: #3f3f00;}
+			#_foot .foot_content .fright dl dt,dd{height: 19px;}
+			#_foot .foot_content .fright dl dt,dd a{ margin-left: 15px;}
+			#_foot .foot_content .fright dl dd a{color: #999999;}
+			#_foot .foot_content .fright dt{font-size: 16px;}
+			#_foot .foot_content .fright dl dd a:hover{color:#0066ff ;}
+			
+			/*last部分*/
+			#last{width: 100%; height: 88px;}
+			#_last{width: 1200px; height: auto;overflow: hidden; margin: auto;}
+			#_last .last_top,ul{width: 1200px; height: 24px;}
+			#_last .last_top ul li{float: left; text-align: center;}
+			#_last .last_top ul li a{display: block; width: 70px; height: 12px; border-right: 1px solid #999999;color: #333333;}
+			#_last .last_bot{width: 1200px; height: 80px;}
+			#_last .last_bot p{color: #999999; font-size: 14px;}
+			#_last .last_bot p:hover{color:#0066ff ;}
+
+
+			
+			/*商品列表*/
+			#goods{width: 231px; height: 200px; background:#ffefe0; position: absolute; top: 172px; left: 32px;}
+			#goodsul li{width: 230px; height: 50px; line-height: 50px; border-left:1px  solid #c7012c;border-right:1px  solid #c7012c;}
+			#g4{border-bottom:1px  solid #c7012c;}
+			#goodsul li a{ display: block; width: 190px;padding-left: 22px; height: 49px; background: #ffefe0; color: black; font-size: 18px;margin-left: 9px; border-bottom: 1px solid #f8d4bc;}
+			#goodsul li a span{ padding-left: 100px; font-size: 16px; color: #e59f8c;}
+			#goodsul1 .g1{width: 690px; height: 200px; border: 1px solid #c7022d;border-left: none; position: absolute;left: 232px; top:0; background: white;}
+			#goodsul1 .g1 .g11{ width: 480px; height: 200px; background: white;float: left;}
+			#goodsul1 .g1 .g11 a{display: block; width: 80px; height: 50px; float: left;text-align: center; line-height: 36px; color: #666666;}
+			#goodsul1 .g1 .g12{width: 210px; height: 200px; background: #fff8f0;float: left;}
+			#goodsul1 .g1 .g12 h1{width: 210px; height: 22px; line-height: 22px;color: #c7012c; padding-left: 28px;}
+			#goodsul1 .g1 .g12 a{ float: left; display: block; width: 74px; height: 30px; text-align: center; line-height: 30px; margin-left: 20px;}
+			
+			
+		</style>
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>
+		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>
+		<script type="text/javascript">
+			$(function(){				
+				//商品列表图片
+				if(location.search){
+					var id=location.search;
+					id=id.split("?")[1];
+				}
+				$.get("picture.json",function(data){
+					for(var i = 0 ; i < data.length; i++){
+						if(id == data[i].id){
+							var obj = data[i];
+							var a=$("<a href='#'><img src=" + obj.goodsimg.big + "></a>");
+							$(".list1 li").prepend(a);							
+							var h1=$("<h1>" +obj.p + "</h1>")
+							$(".right_1").append(h1);
+							var p=$("<p>" +obj.p1 + "</p>")
+							$(".right_1").append(p);
+							var span1=$("<span>" +obj.span1 + "</span>")
+							$(".right_2 p").append(span1);
+							
+							for(var j=0;j<obj.goodsimg.small.length;j++){
+								var img=$("<img src=" + obj.goodsimg.small[j].img + "/>");
+								$(".list2 li").eq(j).append(img);				
+							}
+							
+							var aimg=$("<img id='bigImg' src=" + obj.goodsimg.small[0].img + "/>");
+							$("#bigArea").append(aimg);
+						}
+					}
+					
+				//购物车
+
+				//点击购买按钮
+				$("#buygoods").click(function(){
+					var goodsList = $.cookie("cart") ? JSON.parse( $.cookie("cart") ) : [];
+						$.getJSON("picture.json",function(data){
+							for(var i = 0 ; i < data.length; i++){
+								if(id == data[i].id){
+									var cart=data[i];
+									goodsList.push(cart);
+									var isExists = false; //表示是否存在相同商品
+									break;
+								}
+							}
+							for (var i=0; i<goodsList.length; i++) {
+								//如果存在相同的商品, 则把数量++, 不需要重新添加新的商品
+								if (id == goodsList[i].id) {
+//									$.cookie("cart", JSON.stringify(goodsList), {expires:-1, path:"/"});
+									goodsList[i].num++;
+									for (var j=i+1; j<goodsList.length; j++) {
+										if(id == goodsList[j].id)
+										{
+											goodsList.splice(j,1);
+										}
+									}
+									isExists = true; //表示存在相同商品
+//									$.cookie("cart", JSON.stringify(goodsList), {expires:22, path:"/"});
+									break;
+								}
+							}
+							
+							//如果不存在相同商品, 则添加新商品
+							if (!isExists) {
+								//添加一个新商品到购物车
+								goodsList.push(cart);
+							}
+							$.cookie("cart", JSON.stringify(goodsList), {expires:22, path:"/"});
+							console.log(cart);
+									location.href ="购物车.html?" + cart.id;
+								
+							
+						})
+				})
+				
+				
+				
+
+				
+					//放大镜
+					var bigImg=$("#bigImg");
+					var smallImg=$(".list1 li");
+					var smallArea=$("#smallArea");
+					var bigArea=$("#bigArea");
+					smallArea.width(smallImg.width()/bigImg.width()*bigArea.width());
+					smallArea.height(smallImg.height()/bigImg.height()*bigArea.height());
+					var scale=bigImg.width()/smallImg.width();
+					smallImg.mousemove(function(e){
+						
+						bigArea.show();
+						smallArea.css("display","block");					
+						var x=e.pageX-smallImg.offset().left-smallArea.width()/2;
+						var y=e.pageY-smallImg.offset().top-smallArea.height()/2;
+						if(x<0){
+							x=0
+						}else if(x>smallImg.width()-smallArea.width()){
+							x=smallImg.width()-smallArea.width()
+						}
+						if(y<0){
+							y=0
+						}else if(y>smallImg.height()-smallArea.height()){
+							y=smallImg.height()-smallArea.height();
+						}
+	
+						smallArea.css({left: x, top: y});
+						bigImg.css({left:-scale*x,top:-scale*y});
+	
+					})
+					smallImg.mouseout(function(e){
+						bigArea.hide();
+						smallArea.hide();
+					})
+					
+					
+					
+					//鼠标事件使小图片切换
+					$(".list2 li").mouseenter(function(){
+						var index=$(this).index();
+						var ad=$(".list2 li img").eq(index).attr("src");
+						$(".list1 li img").attr("src",ad)
+						$("#bigArea img").attr("src",ad)
+					})
+					
+					//闭包获取当前图片
+//					for(var i=0;i<$(".list2 li").length;i++){
+//						(function(index){
+//							$(".list2 li").eq(index).mouseenter(function(){
+//							var ad=$(".list2 li img").eq(index).attr("src");
+//							$(".list1 li img").attr("src","ad");
+//								
+//							})
+//						})(i)
+//					}
+					
+					
+				})
+//					goods			
+				//左上列表
+				$("#goods").hide();
+				$("#goodsul").hide();
+				$("#goodsul1").hide();
+				$(".header_bott_left").mouseenter(function(){
+					$("#goods").show();
+					$("#goodsul").show();
+						
+				})
+				$("#goodsul li").mouseenter(function(){
+						$("#goodsul1").show();//"border-right","1px solid #fff"
+						$(this).css({
+							"border-right":"1px solid #fff",
+							"background":"#fff",
+							"border-bottom":"1px solid #c7012c",
+							"border-top":"1px solid #c7012c"
+						}).find("a").css({
+							"background":"#fff",
+							"border-bottom":"none"
+						}).parent("li").siblings().css({
+							"border-bottom":"none",
+							"border-top":"none",
+							"background":"#ffefe0",
+							"border-right":"1px solid #c7012c"
+							
+						}).find("a").css({
+							"background":"#ffefe0"
+						})
+						$("#g4").css("border-bottom","1px solid #c7012c");
+					})
+				
+				
+				$("#goods").mouseleave(function(){
+					$("#goodsul li").css({
+						"background":"#ffefe0",
+						"border-top":"none",
+						"border-bottom":"none",
+						"border-right":"1px solid #c7012c"
+					}).find("a").css({
+						"background":"#ffefe0",
+						"border-bottom": "1px solid #f8d4bc"
+					})
+					$("#g4").css("border-bottom","1px solid #c7012c");
+					$("#goods").hide();
+					$("#goodsul").hide();
+					$("#goodsul1").hide();
+				})	
+				
+				
+				
+			})
+			
+			
+		</script>
+        <script type="text/javascript" src="{% static 'js/xiangqing.js' %}" ></script>
+        <script type="text/javascript" src="{% static 'js/xiangqing.js' %}" ></script>
+
+
+	</head>
+
+	<body>
+		<div class="_top">
+
+        {% if username %}
+            <p>
+
+                用户名: {{ username }}
+            </p>
+            <a href="{% url 'fz:logout' %}">退出</a>
+        {% else %}
+            <div>
+                <a href="{% url 'fz:denglu' %}">登录</a>
+                <a href="{% url 'fz:zhuce' %}">注册</a>
+            </div>
+        {% endif %}
+        <div class="top_right">
+            <ul class="list">
+                <li class="li1"><a href="#">我的账户</a><b class="bb1"><img src="{% static 'img/q1.png' %}"></b></li>
+                <ul class="menu" style="display: none;">
+                    <li class=""><a href="#">账户首页</a></li>
+                    <li><a href="#">我的收藏</a></li>
+                    <li><a href="#">我的订单</a></li>
+                </ul>
+                <li><a href="#">帮助中心</a></li>
+                <li><b><img src="{% static 'img/q2.png' %}"></b><a href="#">网站体验反馈</a></li>
+                <li><b><img src="{% static 'img/phone.png' %}"></b><a href="#">400 883 6900</a></li>
+            </ul>
+        </div>
+    </div>
+			</div>
+			<div class="_header">
+				<div class="header">
+					<img src="{% static 'img/new.gif' %}" id="new">
+					<img src="{% static 'img/hot.gif' %}" id="hot">
+					<a href="#"><img src="{% static 'img/3.png' %}" class="img1"></a>
+					<div class="search">
+						<div class="search_left">
+							<input type="text" class="search_txt">
+						</div>
+						<div class="search_right">
+							<a href="#">搜索</a>
+						</div>
+					</div>
+					<div class="header_bott">
+						<div class="header_bott_left">
+							<a href="#">
+								<h2>全部商品分类</h2>
+								<b><img src="{% static 'img/4.png' %}"></b>
+							</a>
+						</div>
+
+						<a href="#" class="a_img"><img src="{% static 'img/5.png' %}"></a>
+						<div class="header_bott_right">
+							<ul class="ul1">
+								<li><a href="#">首页</a></li>
+								<li><a href="#">奶粉专区</a></li>
+								<li><a href="#">飞虎团购</a></li>
+							</ul>
+							<ul class="ul2">
+								<li>
+									<a href="#"><img src="{% static 'img/6.png' %}"></a>
+									<div class="aa">
+										<a href="{% url 'fz:cart' %}">购物车（<b>{{ carts.number }}</b>）</a>
+									</div>
+								</li>
+								<li>
+									<a href="#">去结算&nbsp;<img src="{% static 'img/7.png' %}"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="list">
+						<ul></ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!--中间内容部分-->
+		<div class="content">
+			<div class="_content">
+				<div class="con_top">
+					<ul>
+						<li><a href="#">综合专区&nbsp;&gt;</a></li>
+						<li><a href="#">服装鞋帽&nbsp;&gt;</a></li>
+						<li><a href="#">袜子袜裤&nbsp;&gt;</a></li>
+						<li><a href="#">南极人男士床袜 5双盒装纯色夏季浅口隐形透气</a></li>
+					</ul>
+				</div>
+
+				<!--放大镜-->
+				<div class="middle">
+					<div class="mid_left">
+						<div class="mid_box">
+							<ul class="list1">
+								<li>
+								    <a href="#"><img src="{% static  picture.img  %}"></a>
+									<div id="smallArea"></div>
+								</li>
+								<div id="bigArea">
+									<!--<img id="bigImg" src="img/da1.jpg"/>-->
+								</div>
+							</ul>
+						</div>
+						<ul class="list2">
+							<li><!--<img src="img/da1.jpg">--></li>
+							<li><!--<img src="img/da2.jpg">--></li>
+							<li><!--<img src="img/da3.jpg">--></li>
+						</ul>
+					</div>
+					<div class="mid_right">
+						<div class="right_1">
+							<h1>{{ picture.p }} </h1>
+							<p>春夏新品礼盒装</p>
+						</div>
+						<div class="right_2">
+							<p><span>&nbsp;飞&nbsp;虎&nbsp;价 ￥</span><span>{{ picture.span }}</span><!--<span>39</span>--></p>
+						</div>
+						<div class="right_3">
+							<div class="x1">
+								<span>温馨提示：该商品不支持</span>
+								<span>货到付款</span>
+							</div>
+							<div class="x2">
+								<span>库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存：送至&nbsp;</span>
+								<span id="kuan">
+									<p>广东</p>
+								    <div class="icon">
+								    	∇
+									</div>
+								</span>
+								<span class="vi">&nbsp;3-7天</span>
+							</div>
+							<div class="x3">
+								<span>服务：由<span>&nbsp;飞虎乐购&nbsp;</span>发货，并提供售后服务</span>
+							</div>
+							<div class="x4">
+								<img src="{% static 'img/xing.png' %}">
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="buy">
+				<div class="buyTop">
+					<span>选择颜色:</span><span>图片色</span>
+				</div>
+				<div class="buyCon">
+					<span class="sss">选择尺码</span>
+					<ul class="chi">
+						<li class="s">s</li>
+						<li class="m">m</li>
+						<li class="l">l</li>
+						<li class="xl">xl</li>
+					</ul>
+				</div>
+				<div class="buyLast">
+
+					<span>我要买</span>&nbsp;
+                    <span class="cut">-</span>&nbsp;
+                    <span><input class="num" type="text" name="num"  value="1"></span>
+
+
+                    <span class="add">+</span>
+
+				</div>
+				<div class="pp">已选择图片&nbsp;XL</div>
+				<div class="buybot buy-btn" shopid={{ picture.id }}>
+					<img src="{% static 'img/buynow.png' %}" id="buygoods">
+					<img src="{% static 'img/jion.png' %}" id="savegoods">
+					<span><img src="{% static 'img/xingxing.png' %}">加入收藏</span>
+				</div>
+			</div>
+		</div>
+		<!--goods-->
+
+		<!--foot部分-->
+		<div id="foot">
+			<div id="_foot">
+				<div class="foot_top">
+					<h1 class="hh1">质量放心</h1><p>全场正品100%</p><h1 class="hh2">购物安心</h1><p>货到付款&nbsp;快速送达</p><h1 class="hh3">服务贴心</h1><p>7天退货 &nbsp;15天退货</p>
+				</div>
+				<div class="foot_content">
+					<div class="fleft">
+						<p class="f1">订购/咨询热线：<strong>400-883-6900</strong></p>
+						<p class="f2">投诉/建议热线：<strong>400-883-3452</strong></p>
+						<br clear="all">
+						<div class="phone">
+							<img src="{% static 'img/fphone.png' %}">
+							<p>周一到周六：<em>08：00-21：00</em></p>
+							<p>周日<em>09：00-18：00</em></p>
+						</div>
+					</div>
+					<div class="fright">
+						<dl class="dl1">
+							<dt>购物指南</dt>
+							<dd><a href="#">购物流程</a></dd>
+							<dd><a href="#">会员说明</a></dd>
+							<dd><a href="#">积分说明</a></dd>
+							<dd><a href="#">优惠券</a></dd>
+							<dd><a href="#">第三方服务说明</a></dd>
+							<dd><a href="#">团购规则</a></dd>
+						</dl>
+						<dl class="dl2">
+							<dt>购物指南</dt>
+							<dd><a href="#">购物流程</a></dd>
+							<dd><a href="#">会员说明</a></dd>
+							<dd><a href="#">积分说明</a></dd>
+							<dd><a href="#">优惠券</a></dd>
+							<dd><a href="#">第三方服务说明</a></dd>
+							<dd><a href="#">团购规则</a></dd>
+						</dl>
+						<dl class="dl3">
+							<dt>购物指南</dt>
+							<dd><a href="#">购物流程</a></dd>
+							<dd><a href="#">会员说明</a></dd>
+							<dd><a href="#">积分说明</a></dd>
+							<dd><a href="#">优惠券</a></dd>
+							<dd><a href="#">第三方服务说明</a></dd>
+							<dd><a href="#">团购规则</a></dd>
+						</dl>
+						<dl class="dl4">
+							<dt>购物指南</dt>
+							<dd><a href="#">购物流程</a></dd>
+							<dd><a href="#">会员说明</a></dd>
+							<dd><a href="#">积分说明</a></dd>
+							<dd><a href="#">优惠券</a></dd>
+							<dd><a href="#">第三方服务说明</a></dd>
+							<dd><a href="#">团购规则</a></dd>
+						</dl>
+						<dl class="dl5">
+							<dt>购物指南</dt>
+							<dd><a href="#">购物流程</a></dd>
+							<dd><a href="#">会员说明</a></dd>
+							<dd><a href="#">积分说明</a></dd>
+							<dd><a href="#">优惠券</a></dd>
+							<dd><a href="#">第三方服务说明</a></dd>
+							<dd><a href="#">团购规则</a></dd>
+						</dl>
+					</div>
+				</div>
+				<div id="last">
+					<div id="_last">
+						<div class="last_top">
+							<ul>
+								<li><a href="#">常见问题</a></li>
+								<li><a href="#">法律说明</a></li>
+								<li><a href="#">联系客服</a></li>
+								<li><a href="#">新闻中心</a></li>
+								<li><a href="#">意见箱</a></li>
+							</ul>
+						</div>
+						<div class="last_bot">
+							<p>增值电信业务经营许可证：粤B2-20130551 | 网站备案：粤ICP备133245 |  食品流通许可证：SP4403112014007826</p><br clear="all">
+
+							<p>食品流通许可证：SP1103021110002595 </p><br clear="all">
+
+							<p> Copyright © 2009-2016 深圳富金机网络科技有限公司.All Rights Reserved &nbsp;</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="goods" style="display: none;">
+			<ul id="goodsul" style="display: none;">
+				<li id="g1" class="active"><a href="#">服装鞋帽<span>&gt;</span></a></li>
+				<li id="g2"><a href="#">运动健康<span>&gt;</span></a></li>
+				<li id="g3"><a href="#">钟表首饰<span>&gt;</span></a></li>
+				<li id="g4"><a href="#">厨房电气<span>&gt;</span></a></li>
+			</ul>
+			<ul id="goodsul1" style="display: none;">
+				<li class="g1">
+					<div class="g11">
+						<a href="#">男装</a>
+						<a href="#">瑜伽服</a>
+						<a href="#">女装</a>
+						<a href="#">男鞋</a>
+						<a href="#">女鞋</a>
+						<a href="#">运动鞋</a>
+						<a href="#">表演舞蹈服</a>
+						<a href="#">内衣/内裤</a>
+						<a href="#">袜子袜裤</a>
+						<a href="#">家居服</a>
+						<a href="#">亲子服</a>
+						<a href="#">童鞋</a>
+						<a href="#">帽子</a>
+						<a href="#">腰带</a>
+						<a href="#">围巾</a>
+						<a href="#">童装</a>
+					</div>
+
+					<div class="g12">
+						<h1>热门品牌</h1>
+						<a href="#">自然堂</a>
+						<a href="#">博洋家纺</a>
+						<a href="#">七匹狼</a>
+						<a href="#">苏泊尔</a>
+						<a href="#">曼秀雷敦</a>
+						<a href="#">御泥坊</a>
+						<a href="#">乐扣乐扣</a>
+						<a href="#">爱华士</a>
+						<a href="#">美的</a>
+						<a href="#">魏仕蓝</a>
+
+					</div>
+
+				</li>
+				<!--<li class="g2"></li>
+				<li class="g3"></li>
+				<li class="g4"></li>-->
+			</ul>
+		</div>
+
+		<style type="text/css">
+			.b1{width: 380px; height: 18px; position: absolute; top: 340px; left:350px; font-weight: normal;}
+			.sp{width: 160px; height: 16px;position: absolute; top: 310px; left:1088px;}
+
+		</style>
+		<b class="b1">本次消费最多可用300点积分(抵现金：¥10元) <a href="#">如何获取积分？</a></b>
+		<span class="sp">商品编号：2060402217688</span>
+
+
+
+</body>
+</html>

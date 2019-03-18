@@ -1,0 +1,242 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">		
+			*{ margin: 0; padding: 0;}
+			ul,li{ list-style: none;}
+			*{ font-size: 14px;}
+			.content{ width: 100%; height: 100%; background: url(img/bg.jpg) no-repeat; background-size: cover; 
+			width: 1280px; height: 580px; margin: auto; position: relative; border-bottom: 1px solid #dddddd;}
+			.top{width: 100%;height: 28px; background: #eeeeee; border-bottom: 1px solid #dddddd;}
+			._top{width: 1280px; height: 24px; margin: auto;}
+			.top_left{width: 400px; height: 24px; float: left;margin-left: 44px; line-height: 24px;color: #999999;}
+			.top_left a{color: blue;}
+			.top_right{width: 460px; height: 24px;float: left; margin-left: 376px;line-height: 24px;color: #666666;}
+			.top_right a{padding-right: 20px;}
+			.top_right ul li{ float: left;}
+			.top_right ul li:first-child{width: 82px;}
+			.top_right ul li:nth-child(2){margin-left: 20px; }
+			.top_right ul li:nth-child(3){margin-left: 12px;}
+			.top_right ul li a:first-child{padding-right: 6px;}
+			.top_right ul li:last-child{font-weight: bold;}
+			.top_right ul .menu{width: 80px; height: 82px; border: 1px solid #c7012c; position: absolute;top:24px;left: 820px; z-index: 999999; background: white;}
+			.top_right ul .menu li{width: 80px; height: 27px;}
+			.top_right ul .menu li:nth-child(2){margin-left: 0px;}
+			.top_right ul .menu li:nth-child(3){margin-left: 0px;}
+			.top_right ul .menu li a{ text-decoration: none;}
+			.top_right ul .menu .active{background: #ffffcc; text-decoration: underline;}
+			.logo{position: absolute; width: 200px; height: 120px;}
+			.last{width: 100%; height: 88px;}
+			._last{width: 980px; height: auto;overflow: hidden; margin: auto; margin-left: 68px; padding-top: 12px;}
+			._last .last_top,ul{width: 980px; height: 24px;}
+			._last .last_top ul li{float: left; text-align: center;}
+			._last .last_top ul li a{display: block; width: 70px; height: 12px; border-right: 1px solid #999999;color: #0066ff;}
+			._last .last_bot{width: 980px; height: 68px;}
+			._last .last_bot p{color: #666666;}
+			._last .last_bot p:hover{color:#0066ff ;}
+
+			
+			/*登录*/
+			#box{width: 366px; height: 390px; border: 2px solid #eedfbb; position: absolute; top:120px;left: 712px;}
+			#box .title{width: 366px; height: 34px; background: #e9e9e9;}
+			#box .title h2{width: 150px; height: 15px; margin-left: 16px; padding-top: 8px;}
+			#box .mainbox{width: 364px; height: 354px; border: 1px solid #c7012c; background: white;}
+			#box .mainbox .main{width: 336px; height: 330px;margin-left: 14px;margin-top: 12px;}
+			#box .mainbox .main .tip{width: 336px; height: 34px; background: #fafafa; border: 1px solid #CCCCCC;}
+			#box .mainbox .main .tip p{padding-top: 8px;padding-left: 10px; font-size: 12px;}
+			#box .mainbox .main .con{width: 336px; height: 110px;border-bottom:1px dashed #CCCCCC;}
+			#box .mainbox .main .con input{width: 230px; height: 26px; border: 1px solid #ccc; float: left;margin-top: 10px;margin-left: 16px;}
+			#box .mainbox .main .con span{width: 66px; height: 20px; display: block; float: left; margin-top: 14px;padding-left: 18px;}
+			#box .mainbox .main .con a{display: inline-block; width: 80px; height: 16px;margin-left: 96px; margin-top: 10px;}
+			#box .mainbox .main .blast{width: 336px ; height: 108px;}
+			#box .mainbox .main .blast div{width: 336px; height:36px ; }
+			#box .mainbox .main .blast .blast1 img{display: inline-block;}
+			#box .mainbox .main .blast .blast1 .qq{margin-left: 8px; margin-top: 4px;}
+			#box .mainbox .main .blast .blast1 .ico{margin-left: 8px;}
+			#box .mainbox .main .blast .blast1 a{color: cornflowerblue;}
+			#box .mainbox .main .blast .blast2 a{color: cornflowerblue;}
+			#box .mainbox .main .blast .blast3 a{color: cornflowerblue;}
+			#box .mainbox .main .blast .blast1 .sb{margin-left: 16px;}
+			#box .mainbox .main .blast .blast2 .peple{margin-left: 84px; margin-top: 10px;}
+			#box .mainbox .main .blast .blast2 .xing{margin-left: 10px;}
+			#box .mainbox .main .blast .blast2 .yi{margin-left: 10px;}
+			#box .mainbox .main .blast .blast3 .xun{margin-left: 84px; margin-top:10px ;}
+			#box .mainbox .main .blast .blast3 .you{margin-left: 10px;}
+			#box .mainbox .main .bott img{margin-left: 82px; margin-top: 24px;}
+			#box .mainbox .main .bott .bo a{width: 70px; height: 16px; display: block; position: absolute; top: 336px; left: 256px;color: cornflowerblue;}
+		</style>
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>
+		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//登录与注册
+				$(".top_left a:first-child").click(function(){
+					location.href = "denglu.html";
+				})
+				$(".top_left a:last-child").click(function(){
+					location.href = "zhuce.html";
+				})
+				$(".bott a").click(function(){
+					location.href="zhuce.html";
+				})
+				
+				//判断是否存在该用户(匹配用户名和密码是否都一致)
+				$("#denglu").click(function(){
+					
+					var users = $.cookie("users");
+					if (users) {
+						
+						users = JSON.parse(users); //cookie中的所有注册过的用户
+						
+						var isExists = false; //表示是否存在该用户
+						for (var i=0; i<users.length; i++) {
+							if ( users[i].name == $("#name").val() && users[i].pwd == $("#pwd").val() ) {
+								alert("登录成功")
+								isExists = true;
+								location.href = "飞虎乐购.html?" + users[i].name;
+								console.log(users[i].name);
+							}
+						}
+						
+						if (!isExists) {
+							alert("用户名或密码错误, 请重新输入!");
+							return;
+							
+						}
+						
+					}
+					else {
+						console.log("不存在用户, 请先注册!");
+						alert("不存在用户, 请先注册!");
+						location.href = "zhuce.html";
+						return;
+					}
+					
+					
+				})
+				
+				
+				
+				
+				
+				
+				//右上list
+				$(".menu").hide();
+				$(".menu li:first-child").removeClass('active');
+				
+				$(".list .li1,.menu").mouseenter(function(){
+					$(".menu").show();
+					$(".list .li1").css({
+						"background":"#c7012c"
+					})
+					$(".list .li1 a").css("color","white")
+					$(".bb1 img").attr("src","img/hongshangsanjiao.png");
+					
+				})
+				$(".list .li1,.menu").mouseleave(function(){
+					$(".menu").hide();
+					$(".list .li1").css({
+						"background":"#eeeeee",
+						"color":"#666666"
+					})
+					$(".list .li1 a").css("color","#666666")
+					$(".bb1 img").attr("src","img/q1.png")
+				})
+				
+				$(".menu li").mouseenter(function(){
+						$(this).addClass('active').siblings().removeClass('active');
+					})
+				
+			})
+		</script>
+	</head>
+
+	<body>		
+
+		<div class="top">
+			<div class="_top">
+				<div class="top_left"><div>
+        <a href="{% url 'fz:denglu' %}">登录</a>
+        <a href="{% url 'fz:zhuce' %}">注册</a>
+    </div>
+				</div>
+				<div class="top_right">
+					<ul class="list">
+						<li class="li1"><a href="#">我的账户</a><b class="bb1"><img src="{% static 'img/q1.png' %}"></b></li>
+						<ul class="menu" style="display: none;">
+								<li class=""><a href="#">账户首页</a></li>
+								<li><a href="#">我的收藏</a></li>
+								<li><a href="#">我的订单</a></li>
+						</ul>
+						<li><a href="#">帮助中心</a></li>
+						<li><b><img src="{% static 'img/q2.png' %}"></b><a href="#">网站体验反馈</a></li>
+						<li><b><img src="{% static 'img/phone.png' %}"></b><a href="#">400 883 6900</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<img src="{% static 'img/login_logo.jpg' %}" class="logo">
+		</div>
+		<div class="last">
+			<div class="_last">
+				<div class="last_top">
+					<ul>
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">法律说明</a></li>
+						<li><a href="#">联系客服</a></li>
+					</ul>
+				</div>
+				<div class="last_bot">
+					<p>增值电信业务经营许可证：粤B2-20130551 | 网站备案：粤ICP备133245 |  食品流通许可证：SP4403112014007826</p>
+					<p>食品流通许可证：SP1103021110002595 </p>
+					<p> Copyright © 2009-2016 深圳富金机网络科技有限公司.All Rights Reserved &nbsp;</p>
+				</div>
+			</div>
+		</div>
+        <form action="{% url 'fz:denglu' %}" method="post">
+            {% csrf_token %}
+		<div id="box">
+			<div class="title">
+				<h2>用户等录</h2>
+			</div>
+			<div class="mainbox">
+				<div class="main">
+					<div class="tip">
+						<p>欢迎您登录飞虎乐购，享受您的购物之旅。</p>
+					</div>
+					<div class="con">
+						<span>用户名：&nbsp;</span><input id="name" type="text"name="username"> <br>
+						<span>密 &nbsp;&nbsp;码:</span><input id="pwd" type="password"name="password"> <br>
+						<a href="#">忘记密码?</a>
+					</div>
+					<div class="blast">
+						<div class="blast1">
+							<span class="sb">联合登录</span>
+							<img src="{% static 'img/pay.gif' %}" class="pay"><a href="#" class="a1">支付宝快捷登录</a>
+							<img src="{% static 'img/qq.png' %}" class="qq"><a href="#" class="a2">QQ</a>
+							<img src="{% static 'img/ico_sina.gif' %}" class="ico"><a href="#" class="a3">新浪</a>
+						</div>
+						<div class="blast2">
+							<img src="{% static 'img/ico_renren.gif' %}" class="peple"><a href="#">人人网</a>
+							<img src="{% static 'img/ico_kaixin.gif' %}" class="xing"><a href="#">开心</a>
+							<img src="{% static 'img/ico_163.gif' %}" class="yi"><a href="#">网易</a>
+						</div>
+						<div class="blast3">
+							<img src="{% static 'img/ico_xunlei.gif' %}" class="xun"><a href="#">迅雷</a>
+							<img src="{% static 'img/ico_chinaMobile.jpg' %}" class="you"><a href="#">139邮箱</a>
+						</div>
+					</div>
+					<div class="bott">
+						<input type="submit" value="登錄"><span class="bo"><a href="#">免费注册</a></span>
+				</div>
+			</div>
+		</div>
+        </form>
+</div>
+
+	</body>
+</html>

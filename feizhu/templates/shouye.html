@@ -1,0 +1,1585 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<body>
+<meta charset="utf-8"/>
+<link href="{% static 'css/飞虎乐购.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'css/swiper-3.4.2.min.css' %}">
+
+<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/飞虎乐购.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/飞虎乐购.js' %}"></script>
+<script src="{% static 'js/swiper-3.4.2.min.js' %}"></script>
+<script src="{% static 'js/lunbotu.js' %}"></script>
+<title></title>
+<body>
+<!--<div class="aiya">
+<div id="opacity"></div>
+<img src="img/pacity.gif" id="gif">
+<img src="img/X.png" id="X"/>
+<!--<img src="img/laohu.png" id="laohu">-->
+<!--<img src="img/txt.png" id="txt"/>-->
+<!--</div>-->
+
+
+<div class="_top">
+    <div class="top">
+        {% if username %}
+            <p>
+
+                用户名: {{ username }}
+            </p>
+            <a href="{% url 'fz:logout' %}">退出</a>
+        {% else %}
+            <div>
+                <a href="{% url 'fz:denglu' %}">登录</a>
+                <a href="{% url 'fz:zhuce' %}">注册</a>
+            </div>
+        {% endif %}
+
+        <div>
+            <ul>
+                <li><a href="#">我的账户<img src="{% static 'img/下三角.png' %}"></a></li>
+                <li><a href="#">网站导航<img src="{% static 'img/下三角.png' %}"></a></li>
+                <li><a href="#">加入收藏</a></li>
+                <li><a href="#"><img src="{% static 'img/phone.png' %}">400&nbsp;883&nbsp;6900</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="_header">
+        <div class="header">
+            <img src="{% static 'img/new.gif' %}" id="new">
+            <img src="{% static 'img/hot.gif' %}" id="hot">
+            <a href="#"><img src="{% static 'img/3.png' %}" class="img1"></a>
+            <div class="search">
+                <div class="search_left">
+                    <input type="text" class="search_txt">
+                </div>
+                <div class="search_right">
+                    <a href="#">搜索</a>
+                </div>
+            </div>
+            <div class="header_bott">
+                <div class="header_bott_left">
+                    <a href="#">
+                        <h2>全部商品分类</h2>
+                        <b><img src="{% static 'img/4.png' %}"></b>
+                    </a>
+                </div>
+                <a href="#" class="a_img"><img src="{% static 'img/5.png' %}"></a>
+                <div class="header_bott_right">
+                    <ul class="ul1">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">奶粉专区</a></li>
+                        <li><a href="#">飞虎团购</a></li>
+                    </ul>
+                    <ul class="ul2">
+                        <li>
+                            <a href="{% url 'fz:cart' %}"><img src="{% static 'img/6.png' %}"></a>
+                            <div class="aa">
+                                <a href="{% url 'fz:cart' %}">购物车</a>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="#">去结算&nbsp;<img src="{% static 'img/7.png' %}"></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav">
+    <div class="_nav">
+        <div class="nav_left">
+            <ul>
+                <li><img src="{% static 'img/8.png' %}"><span>&nbsp;&nbsp;生活电器</span></li>
+                <li><img src="{% static 'img/9.png' %}"><span>&nbsp;&nbsp;厨房电器</span></li>
+                <li><img src="{% static 'img/10.png' %}"><span>&nbsp;&nbsp;健康电器</span></li>
+                <li><img src="{% static 'img/11.png' %}"><span>&nbsp;&nbsp;个人护理</span></li>
+                <li><img src="{% static 'img/12.png' %}"><span>&nbsp;&nbsp;厨房用具</span></li>
+                <li><img src="{% static 'img/13.png' %}"><span>&nbsp;&nbsp;家具家纺</span></li>
+                <li><img src="{% static 'img/14.png' %}"><span>&nbsp;&nbsp;服装鞋帽</span></li>
+                <li><img src="{% static 'img/15.png' %}"><span>&nbsp;&nbsp;钟表首饰</span></li>
+                <li><img src="{% static 'img/16.png' %}"><span>&nbsp;&nbsp;洗护美妆</span></li>
+                <li><img src="{% static 'img/17.png' %}"><span>&nbsp;&nbsp;礼品箱包</span></li>
+                <li><img src="{% static 'img/18.png' %}"><span>&nbsp;&nbsp;运动健康</span></li>
+                <li><img src="{% static 'img/19.png' %}"><span>&nbsp;&nbsp;母婴玩具</span></li>
+                <li><img src="{% static 'img/20.png' %}"><span>&nbsp;&nbsp;汽车用品</span></li>
+                <li><img src="{% static 'img/21.png' %}"><span>&nbsp;&nbsp;食品/健康</span></li>
+            </ul>
+        </div>
+        <div id="scrollpicture">
+
+                <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'img/img1.jpg' %}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/img2.jpg' %}"> </div>
+            <div class="swiper-slide"><img src="{% static 'img/img3.jpg' %}"> </div>
+            <div class="swiper-slide"><img src="{% static 'img/img4.jpg' %}"> </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        </div>
+
+
+            <ul class="ul2">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a href="#" class="left">&lt;</a>
+            <a href="#" class="right">&gt;</a>
+
+        </div>
+        <div class="notice">
+            <div class="d1">
+                <a href="#"><img src="{% static 'img/22.png' %}"></a>
+                <h2>公告</h2>
+            </div>
+            <div class="d2">
+                <ul>
+                    <li>【公告】您的积分.余额.优惠</li>
+                    <li>【公告】夏普产品购买承诺书公告</li>
+                    <li>【公告】4/28-5/4龙华取货点营业时</li>
+                    <li>【公告】龙华D2飞虎乐购生活馆开</li>
+                    <li>【公告】飞虎乐购2016火热招商</li>
+                </ul>
+            </div>
+            <div class="d3">
+                <img src="{% static 'img/lb_3.jpg' %}">
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="content">
+    <div id="_content">
+        <hr style=" border: 2px solid #545454;">
+        <div class="buy">
+            <img src="{% static 'img/23.png' %}">
+        </div>
+        <div class="buy1">
+            <div class="ss">秒杀倒计时
+                <span class="clock">
+							<i></i>
+							还剩<em class="time_d"></em>天--><em class="time_h"></em>时<em class="time_m"></em>分<em
+                        class="time_s"></em>秒结束
+						</span>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <a href="#"><img src="{% static 'img/25.png' %}" class="shop"></a>
+                </div>
+                <div class="box2">
+                    <p></p>
+                    <br clear="all">
+                    <div class="box2a">
+                        ￥1
+                    </div>
+                </div>
+                <img src="{% static 'img/but-msz.png' %}" class="shop">
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <a href="#"><img src="{% static 'img/26.png' %}" class="shop"></a>
+                </div>
+                <div class="box2">
+                    <p></p>
+                    <br clear="all">
+                    <div class="box2a">
+                        ￥50
+                    </div>
+                </div>
+                <img src="{% static 'img/but-msz.png' %}" class="shop">
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <a href="#"><img src="{% static 'img/27.png' %}" class="shop"></a>
+                </div>
+                <div class="box2">
+
+
+                    <p></p>
+                    <br clear="all">
+                    <div class="box2a">
+                        ￥20
+                    </div>
+                </div>
+                <img src="{% static 'img/but-msz.png' %}" class="shop">
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <a href="#"><img src="{% static 'img/28.png' %}" class="shop"></a>
+                </div>
+                <div class="box2">
+                    <p></p>
+                    <br clear="all">
+                    <div class="box2a">
+                        ￥100
+                    </div>
+                </div>
+                <img src="{% static 'img/but-msz.png' %}" class="shop">
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <a href="#"><img src="{% static 'img/24.png' %}" class="shop"></a>
+                </div>
+                <div class="box2">
+                    <p></p>
+                    <br clear="all">
+                    <div class="box2a">
+                        ￥199
+                    </div>
+                </div>
+                <img src="{% static 'img/but-msz.png' %}" class="shop">
+            </div>
+        </div>
+        <div class="buy2">
+            <div class="buy2_header">
+                <h1>服装鞋帽</h1>
+            </div>
+            <div class="buy2_content">
+                <div class="buy2_left">
+                    <div class="nav1">泳衣泳裤</div>
+                    <div class="nav2">帽子</div>
+                    <div class="nav3">运动鞋</div>
+                    <div class="nav4">腰带</div>
+                    <div class="nav5">袜子袜裤</div>
+                    <div class="nav6">钟表首饰</div>
+                </div>
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <a href="{% url 'fz:xiangqing' 1 %}"><img src="{% static 'img/1.jpg' %}"></a>
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <a href="{% url 'fz:xiangqing' 2 %}"><img src="{% static 'img/2.jpg' %}"></a>
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <a href="{% url 'fz:xiangqing' 3 %}"><img src="{% static 'img/3.jpg' %}"></a>
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/4.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/5.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/6.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/7.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/11.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/9.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/10.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br clear="all">
+            <div class="buy2_foot">
+                <ul>
+                    <li><img src="{% static 'img/1a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/2a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/3a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/4a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/5a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/6a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/7a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/8a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/9a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/10a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--第二部分-->
+        <div class="buy2">
+            <div class="buy2_header">
+                <h1>服装鞋帽</h1>
+            </div>
+            <div class="buy2_content">
+                <div class="buy2_left">
+                    <div class="nav1">泳衣泳裤</div>
+                    <div class="nav2">帽子</div>
+                    <div class="nav3">运动鞋</div>
+                    <div class="nav4">腰带</div>
+                    <div class="nav5">袜子袜裤</div>
+                    <div class="nav6">钟表首饰</div>
+                </div>
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/1.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/2.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/3.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/4.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/5.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/6.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/7.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/11.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/9.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/10.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br clear="all">
+            <div class="buy2_foot">
+                <ul>
+                    <li><img src="{% static 'img/1a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/2a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/3a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/4a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/5a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/6a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/7a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/8a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/9a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/10a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!--第三部分-->
+        <div class="buy2">
+            <div class="buy2_header">
+                <h1>服装鞋帽</h1>
+            </div>
+            <div class="buy2_content">
+                <div class="buy2_left">
+                    <div class="nav1">泳衣泳裤</div>
+                    <div class="nav2">帽子</div>
+                    <div class="nav3">运动鞋</div>
+                    <div class="nav4">腰带</div>
+                    <div class="nav5">袜子袜裤</div>
+                    <div class="nav6">钟表首饰</div>
+                </div>
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/1.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/2.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/3.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/4.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/5.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/6.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/7.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/11.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/9.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/10.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br clear="all">
+            <div class="buy2_foot">
+                <ul>
+                    <li><img src="{% static 'img/1a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/2a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/3a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/4a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/5a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/6a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/7a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/8a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/9a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/10a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!--第四部分-->
+        <div class="buy2">
+            <div class="buy2_header">
+                <h1>服装鞋帽</h1>
+            </div>
+            <div class="buy2_content">
+                <div class="buy2_left">
+                    <div class="nav1">泳衣泳裤</div>
+                    <div class="nav2">帽子</div>
+                    <div class="nav3">运动鞋</div>
+                    <div class="nav4">腰带</div>
+                    <div class="nav5">袜子袜裤</div>
+                    <div class="nav6">钟表首饰</div>
+                </div>
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/1.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/2.jpg' %}">
+
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/3.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/4.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/5.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/6.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/7.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/11.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/9.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/10.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br clear="all">
+            <div class="buy2_foot">
+                <ul>
+                    <li><img src="{% static 'img/1a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/2a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/3a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/4a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/5a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/6a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/7a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/8a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/9a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/10a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!--第五部分-->
+        <div class="buy2">
+            <div class="buy2_header">
+                <h1>服装鞋帽</h1>
+            </div>
+            <div class="buy2_content">
+                <div class="buy2_left">
+                    <div class="nav1">泳衣泳裤</div>
+                    <div class="nav2">帽子</div>
+                    <div class="nav3">运动鞋</div>
+                    <div class="nav4">腰带</div>
+                    <div class="nav5">袜子袜裤</div>
+                    <div class="nav6">钟表首饰</div>
+                </div>
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/1.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/2.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/3.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/4.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/5.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/6.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/7.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/11.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/9.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/10.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br clear="all">
+            <div class="buy2_foot">
+                <ul>
+                    <li><img src="{% static 'img/1a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/2a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/3a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/4a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/5a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/6a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/7a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/8a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/9a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/10a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!--第六部分-->
+        <div class="buy2">
+            <div class="buy2_header">
+                <h1>服装鞋帽</h1>
+            </div>
+            <div class="buy2_content">
+                <div class="buy2_left">
+                    <div class="nav1">泳衣泳裤</div>
+                    <div class="nav2">帽子</div>
+                    <div class="nav3">运动鞋</div>
+                    <div class="nav4">腰带</div>
+                    <div class="nav5">袜子袜裤</div>
+                    <div class="nav6">钟表首饰</div>
+                </div>
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/1.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/2.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/3.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/4.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/5.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/6.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/7.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/11.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/9.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/10.jpg' %}">
+
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br clear="all">
+            <div class="buy2_foot">
+                <ul>
+                    <li><img src="{% static 'img/1a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/2a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/3a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/4a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/5a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/6a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/7a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/8a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/9a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/10a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!--第七部分-->
+        <div class="buy2">
+            <div class="buy2_header">
+                <h1>服装鞋帽</h1>
+            </div>
+            <div class="buy2_content">
+                <div class="buy2_left">
+                    <div class="nav1">泳衣泳裤</div>
+                    <div class="nav2">帽子</div>
+                    <div class="nav3">运动鞋</div>
+                    <div class="nav4">腰带</div>
+                    <div class="nav5">袜子袜裤</div>
+                    <div class="nav6">钟表首饰</div>
+                </div>
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/1.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/2.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/3.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/4.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/5.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border">
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/6.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/7.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/11.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/9.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <div class="_pictrue">
+                            <div class="pic1">
+                                <img src="{% static 'img/10.jpg' %}">
+                            </div>
+                            <div class="pic2">
+                                <p>Z&amp;X时尚印花拼色卫衣<br>男&nbsp;&nbsp;1413445&nbsp;&nbsp;藏青色X</p>
+                            </div>
+                            <div class="pic3">
+                                <span>￥99</span>
+                                <img src="{% static 'img/29.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br clear="all">
+            <div class="buy2_foot">
+                <ul>
+                    <li><img src="{% static 'img/1a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/2a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/3a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/4a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/5a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/6a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/7a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/8a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/9a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                    <li><img src="{% static 'img/10a.png' %}"><span><img src="{% static 'img/heart.png' %}"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="foot">
+    <div id="_foot">
+        <div class="foot_top">
+            <h1>质量放心</h1>
+            <p>全场正品100%</p>
+            <h1>购物安心</h1>
+            <p>货到付款&nbsp;快速送达</p>
+            <h1>服务贴心</h1>
+            <p>7天退货 &nbsp;15天退货</p>
+        </div>
+        <div class="foot_content">
+            <div class="fleft">
+                <p class="f1">订购/咨询热线：<strong>400-883-6900</strong></p>
+                <p class="f2">投诉/建议热线：<strong>400-883-3452</strong></p>
+                <br clear="all">
+                <div class="phone">
+                    <img src="{% static 'img/fphone.png' %}">
+                    <p>周一到周六：<em>08：00-21：00</em></p>
+                    <p>周日<em>09：00-18：00</em></p>
+                </div>
+            </div>
+            <div class="fright">
+                <dl class="dl1">
+                    <dt>购物指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员说明</a></dd>
+                    <dd><a href="#">积分说明</a></dd>
+                    <dd><a href="#">优惠券</a></dd>
+                    <dd><a href="#">第三方服务说明</a></dd>
+                    <dd><a href="#">团购规则</a></dd>
+                </dl>
+                <dl class="dl2">
+                    <dt>购物指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员说明</a></dd>
+                    <dd><a href="#">积分说明</a></dd>
+                    <dd><a href="#">优惠券</a></dd>
+                    <dd><a href="#">第三方服务说明</a></dd>
+                    <dd><a href="#">团购规则</a></dd>
+                </dl>
+                <dl class="dl3">
+                    <dt>购物指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员说明</a></dd>
+                    <dd><a href="#">积分说明</a></dd>
+                    <dd><a href="#">优惠券</a></dd>
+                    <dd><a href="#">第三方服务说明</a></dd>
+                    <dd><a href="#">团购规则</a></dd>
+                </dl>
+                <dl class="dl4">
+                    <dt>购物指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员说明</a></dd>
+                    <dd><a href="#">积分说明</a></dd>
+                    <dd><a href="#">优惠券</a></dd>
+                    <dd><a href="#">第三方服务说明</a></dd>
+                    <dd><a href="#">团购规则</a></dd>
+                </dl>
+                <dl class="dl5">
+                    <dt>购物指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员说明</a></dd>
+                    <dd><a href="#">积分说明</a></dd>
+                    <dd><a href="#">优惠券</a></dd>
+                    <dd><a href="#">第三方服务说明</a></dd>
+                    <dd><a href="#">团购规则</a></dd>
+                </dl>
+            </div>
+        </div>
+        <div id="last">
+            <div id="_last">
+                <div class="last_top">
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">法律说明</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">新闻中心</a></li>
+                        <li><a href="#">意见箱</a></li>
+                    </ul>
+                </div>
+                <div class="last_bot">
+                    <p>增值电信业务经营许可证：粤B2-20130551 | 网站备案：粤ICP备133245 | 食品流通许可证：SP4403112014007826</p><br>
+
+                    <p>食品流通许可证：SP1103021110002595 </p><br>
+
+                    <p> Copyright © 2009-2016 深圳富金机网络科技有限公司.All Rights Reserved &nbsp;</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

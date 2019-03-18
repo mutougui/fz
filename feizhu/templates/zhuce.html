@@ -1,0 +1,778 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        * {
+            font-size: 14px;
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            background: url(img/bg.jpg) no-repeat;
+            background-size: cover;
+            width: 1280px;
+            height: 580px;
+            margin: auto;
+            position: relative;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .top {
+            width: 100%;
+            height: 28px;
+            background: #eeeeee;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        ._top {
+            width: 1280px;
+            height: 24px;
+            margin: auto;
+        }
+
+        .top_left {
+            width: 400px;
+            height: 24px;
+            float: left;
+            margin-left: 44px;
+            line-height: 24px;
+            color: #999999;
+        }
+
+        .top_left a {
+            color: blue;
+        }
+
+        .top_right {
+            width: 460px;
+            height: 24px;
+            float: left;
+            margin-left: 376px;
+            line-height: 24px;
+            color: #666666;
+        }
+
+        .top_right a {
+            padding-right: 20px;
+        }
+
+        .top_right ul li {
+            float: left;
+        }
+
+        .top_right ul li:first-child {
+            width: 82px;
+        }
+
+        .top_right ul li:nth-child(2) {
+            margin-left: 20px;
+        }
+
+        .top_right ul li:nth-child(3) {
+            margin-left: 12px;
+        }
+
+        .top_right ul li a:first-child {
+            padding-right: 6px;
+        }
+
+        .top_right ul li:last-child {
+            font-weight: bold;
+        }
+
+        .top_right ul .menu {
+            width: 80px;
+            height: 82px;
+            border: 1px solid #c7012c;
+            position: absolute;
+            top: 24px;
+            left: 820px;
+            z-index: 999999;
+            background: white;
+        }
+
+        .top_right ul .menu li {
+            width: 80px;
+            height: 27px;
+        }
+
+        .top_right ul .menu li:nth-child(2) {
+            margin-left: 0px;
+        }
+
+        .top_right ul .menu li:nth-child(3) {
+            margin-left: 0 px;
+        }
+
+        .top_right ul .menu li a {
+            text-decoration: none;
+        }
+
+        .top_right ul .menu .active {
+            background: #ffffcc;
+            text-decoration: underline;
+        }
+
+        .logo {
+            position: absolute;
+            width: 200px;
+            height: 120px;
+        }
+
+        .last {
+            width: 100%;
+            height: 88px;
+        }
+
+        ._last {
+            width: 980px;
+            height: auto;
+            overflow: hidden;
+            margin: auto;
+            margin-left: 68px;
+            padding-top: 12px;
+        }
+
+        ._last .last_top, ul {
+            width: 980px;
+            height: 24px;
+        }
+
+        ._last .last_top ul li {
+            float: left;
+            text-align: center;
+        }
+
+        ._last .last_top ul li a {
+            display: block;
+            width: 70px;
+            height: 12px;
+            border-right: 1px solid #999999;
+            color: #0066ff;
+        }
+
+        ._last .last_bot {
+            width: 980px;
+            height: 68px;
+        }
+
+        ._last .last_bot p {
+            color: #666666;
+        }
+
+        ._last .last_bot p:hover {
+            color: #0066ff;
+        }
+
+        /*注册*/
+        #box {
+            width: 604px;
+            height: 478px;
+            border: 3px solid #eedfbb;
+            position: absolute;
+            top: 126px;
+            left: 580px;
+            background: white;
+        }
+
+        #box .botop {
+            width: 604px;
+            height: 36px;
+            background: #f5f5f5;
+        }
+
+        #box .botop h1 {
+            width: 120px;
+            height: 18px;
+            margin-left: 18px;
+            padding-top: 10px;
+            color: #666666;
+        }
+
+        #box .boxcon {
+            width: 602px;
+            height: 440px;
+            border: 1px solid #c7012c;
+        }
+
+        #box .boxcon .tips {
+            color: #ff0000;
+        }
+
+        #box .boxcon .tips b {
+            width: 98px;
+            height: 18px;
+            display: inline-block;
+            margin-left: 18px;
+            margin-top: 12px;
+            color: #999999;
+        }
+
+        #box .boxcon div {
+            width: 602px;
+            height: 38px;
+        }
+
+        #box .boxcon div span {
+            display: block;
+            width: 80px;
+            height: 24px;
+            float: left;
+            margin-top: 10px;
+        }
+
+        #box .boxcon .int1 {
+            margin-left: 44px;
+        }
+
+        #box .boxcon .int2 {
+            margin-left: 48px;
+        }
+
+        #box .boxcon .int3 {
+            margin-left: 28px;
+        }
+
+        #box .boxcon .int4 {
+            margin-left: 41px;
+        }
+
+        #box .boxcon .int5 {
+            margin-left: 44px;
+            height: 68px;
+            position: relative;
+        }
+
+        #box .boxcon .int1 input {
+            margin-left: 14px;
+        }
+
+        #box .boxcon .int1 p {
+            padding-top: 10px;
+            color: red;
+            font-size: 12px;
+        }
+
+        #box .boxcon .int2 p {
+            padding-top: 10px;
+            color: red;
+            font-size: 12px;
+        }
+
+        #box .boxcon .int3 p {
+            padding-top: 10px;
+            color: red;
+            font-size: 12px;
+        }
+
+        #box .boxcon .int4 p {
+            padding-top: 10px;
+            color: red;
+            font-size: 12px;
+        }
+
+        #box .boxcon .int5 p {
+            padding-top: 10px;
+            color: red;
+            font-size: 12px; /*display: none;*/
+        }
+
+        #box .boxcon .int1 .t1 {
+            color: red;
+            font-size: 12px;
+            width: 200px;
+            height: 12px;
+        }
+
+        #box .boxcon .int2 .t2 {
+            color: red;
+            font-size: 12px;
+            width: 200px;
+            height: 12px;
+        }
+
+        #box .boxcon .int3 .t3 {
+            color: red;
+            font-size: 12px;
+            width: 200px;
+            height: 12px;
+        }
+
+        #box .boxcon .int4 .t4 {
+            color: red;
+            font-size: 12px;
+            width: 200px;
+            height: 12px;
+        }
+
+        #phone {
+            margin-left: 16px;
+        }
+
+        #box .boxcon .int5 .t5 {
+            color: red;
+            font-size: 12px;
+            width: 200px;
+            height: 12px;
+        }
+
+        #box .boxcon .int2 input {
+            margin-left: 9px;
+        }
+
+        #box .boxcon .int3 input {
+            margin-left: 30px;
+        }
+
+        #box .boxcon .int5 input {
+            margin-left: 14px;
+        }
+
+        #box .boxcon .int5 .yan {
+            font-size: 20px;
+            line-height: 22px;
+            padding-left: 10px;
+            width: 60px;
+            height: 22px;
+            border: 1px solid #7f7f7f;
+            position: absolute;
+            left: 94px;
+            top: 42px;
+        }
+
+        #box .boxcon .int5 a {
+            display: block;
+            width: 80px;
+            height: 14px;
+            position: absolute;
+            left: 180px;
+            top: 46px;
+            color: cornflowerblue;;
+        }
+
+        #box .boxcon div input {
+            width: 230px;
+            height: 26px;
+            border: 1px solid #ccc;
+            float: left;
+            margin-top: 4px;
+        }
+
+        #box .boxcon .int6 {
+            width: 550px;
+            height: 22px;
+        }
+
+        #box .boxcon .int6 .gou {
+            width: 14px;
+            height: 14px;
+            float: left;
+            margin-left: 136px;
+            position: absolute;
+            top: 301px;
+            left: 0px;
+        }
+
+        #box .boxcon .int6 .tong {
+            float: left;
+            width: 226px;
+            height: 22px;
+            color: #666666;
+            margin-left: 162px;
+        }
+
+        #box .boxcon .int6 .tong a {
+            color: cornflowerblue;
+        }
+
+        #zhuce {
+            position: absolute;
+            top: 350px;
+            left: 138px;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/zhuce.js' %}"></script>
+
+    <script type="text/javascript">
+        {#$(function () {#}
+            //登录与注册
+            //$(".top_left a:first-child").click(function(){
+            //	location.href = "denglu.html";
+            //})
+            //$(".top_left a:last-child").click(function(){
+            //	location.href = "zhuce.html";
+            //})
+
+
+            //右上列表
+{#            $(".menu").hide();#}
+{#            $(".menu li:first-child").removeClass('active');#}
+{##}
+{#            $(".list .li1,.menu").mouseenter(function () {#}
+{#                $(".menu").show();#}
+{#                $(".list .li1").css({#}
+{#                    "background": "#c7012c",#}
+{#                    "color": "#fff"#}
+{#                })#}
+{#                $(".bb1 img").attr("src", "img/hongshangsanjiao.png");#}
+{##}
+{#            })#}
+{#            $(".list .li1,.menu").mouseleave(function () {#}
+{#                $(".menu").hide();#}
+{#                $(".list .li1").css({#}
+{#                    "background": "#eeeeee",#}
+{#                    "color": "#666666"#}
+{#                })#}
+{#                $(".bb1 img").attr("src", "img/q1.png")#}
+{#            })#}
+{##}
+{#            $(".menu li").mouseenter(function () {#}
+{#                $(this).addClass('active').siblings().removeClass('active');#}
+{#            })#}
+{##}
+{##}
+{#            //注册表格#}
+{##}
+{#            //提交按钮样式#}
+{#            $("#zhuce").mouseenter(function () {#}
+{#                $(this).attr("src", "img/zhuce2.png")#}
+{#            })#}
+{#            $("#zhuce").mouseleave(function () {#}
+{#                $(this).attr("src", "img/zhuce3.png")#}
+{#            })#}
+{##}
+{#            //获取焦点事件#}
+{#            //初始化#}
+{#            $(".p1,.p2,.p3,.p4,.p5").hide();#}
+{#            $(".t1,.t2,.t3,.t4,.t5").hide();#}
+{##}
+{#            //用户名#}
+{#            $("#name").focus(function () {#}
+{#                $(".p1").show();#}
+{#                $(".t1").hide()#}
+{#            }).bind('input propertychange', function () {#}
+{#                $(".p1").hide();#}
+{#            })#}
+{#            //密码#}
+{#            $("#pasw").focus(function () {#}
+{#                $(".p2").show();#}
+{#                $(".t2").hide()#}
+{#            }).bind('input propertychange', function () {#}
+{#                $(".p2").hide();#}
+{#            })#}
+{#            //确认密码#}
+{#            $("#password").focus(function () {#}
+{#                $(".p3").show();#}
+{#                $(".t3").hide()#}
+{#            }).bind('input propertychange', function () {#}
+{#                $(".p3").hide();#}
+{#            })#}
+{#            //手机帐号#}
+{#            $("#phone").focus(function () {#}
+{#                $(".p4").show();#}
+{#                $(".t4").hide()#}
+{#            }).bind('input propertychange', function () {#}
+{#                $(".p4").hide();#}
+{#            })#}
+{##}
+{#            //显示验证码#}
+{#            function Random() {#}
+{#                var str = "";#}
+{#                for (var i = 0; i < 5; i++) {#}
+{#                    var a = parseInt(Math.random() * 10)#}
+{#                    str += a;#}
+{#                }#}
+{#                return str#}
+{#            }#}
+{##}
+{#            $(".yan").html(Random());#}
+{#            $("#check").focus(function () {#}
+{#                $(".p5").show();#}
+{#                $(".t5").hide()#}
+{#            }).bind('input propertychange', function () {#}
+{#                $(".p5").hide();#}
+{#            })#}
+{##}
+{#            $("#zhuce").click(function () {#}
+{#                //注册(cookie存储)#}
+{#                var users = $.cookie("users") ? JSON.parse($.cookie("users")) : [];#}
+{#                //先判断是否存在该用户#}
+{#                for (var i = 0; i < users.length; i++) {#}
+{#                    if (users[i].name == $("#name").val()) {#}
+{#                        console.log("用户名已存在! 不能注册相同的用户");#}
+{#                        alert("用户名已存在! 不能注册相同的用户");#}
+{#                        return;#}
+{#                    }#}
+{#                }#}
+{#                //用户名#}
+{#                if ($("#name").val().length <= 0) {#}
+{#                    $(".p1").hide();#}
+{#                    $(".t1").show().html("用户不能空");#}
+{#                    return;#}
+{#                } else {#}
+{#                    var Fname = false;#}
+{##}
+{#                    function isname(str) {#}
+{#                        var reg = /[a-zA-Z0-9]{4,20}/;#}
+{#                        return reg.test(str);#}
+{#                    }#}
+{##}
+{#                    var is_name = isname($("#name").val());#}
+{#                    if (is_name == true) {#}
+{#                        Fname = true;#}
+{#                    }#}
+{#                    if (Fname) {#}
+{#                        $(".p1").hide();#}
+{#                        $(".t1").show().html("格式正确").css("color", "chartreuse")#}
+{#                    } else {#}
+{#                        $(".p1").hide();#}
+{#                        $(".t1").show().html("格式不正确");#}
+{#                        return;#}
+{#                    }#}
+{#                }#}
+{#                //密码#}
+{#                if ($("#pasw").val().length <= 0) {#}
+{#                    $(".p2").hide();#}
+{#                    $(".t2").show().html("密码不能空");#}
+{#                    return;#}
+{#                } else {#}
+{#                    var Fpasw = false;#}
+{##}
+{#                    function isFpasw(str) {#}
+{#                        var reg = /[a-zA-Z0-9_]{6,16}/;#}
+{#                        return reg.test(str);#}
+{#                    }#}
+{##}
+{#                    var is_Fpasw = isFpasw($("#pasw").val());#}
+{#                    if (is_Fpasw == true) {#}
+{#                        Fpasw = true;#}
+{#                    }#}
+{#                    if (Fpasw) {#}
+{#                        $(".p2").hide();#}
+{#                        $(".t2").show().html("密码格式正确").css("color", "chartreuse")#}
+{#                    } else {#}
+{#                        $(".p2").hide();#}
+{#                        $(".t2").show().html("密码格式不正确");#}
+{#                        return;#}
+{#                    }#}
+{#                }#}
+{#                //确认密码#}
+{#                if ($("#password").val().length <= 0) {#}
+{#                    $(".p3").hide();#}
+{#                    $(".t3").show().html("确认密码不能为空");#}
+{#                    return;#}
+{#                } else {#}
+{#                    var password = $("#password").val();#}
+{#                    if (password == $("#pasw").val()) {#}
+{#                        $(".p3").hide();#}
+{#                        $(".t3").show().html("确认密码正确").css("color", "chartreuse")#}
+{#                    } else {#}
+{#                        $(".p3").hide();#}
+{#                        $(".t3").show().html("确认密码不正确");#}
+{#                        return;#}
+{#                    }#}
+{#                }#}
+{##}
+{#                //手机帐号#}
+{#                if ($("#phone").val().length <= 0) {#}
+{#                    $(".p4").hide();#}
+{#                    $(".t4").show().html("手机帐号不能空");#}
+{#                    return;#}
+{#                } else {#}
+{#                    var Fphone = false;#}
+{##}
+{#                    function isphone(str) {#}
+{#                        var reg = /^1[34578]\d{9}$/;#}
+{#                        return reg.test(str);#}
+{#                    }#}
+{##}
+{#                    var is_phone = isphone($("#phone").val());#}
+{#                    if (is_phone == true) {#}
+{#                        Fphone = true;#}
+{#                    }#}
+{#                    if (Fphone) {#}
+{#                        $(".p4").hide();#}
+{#                        $(".t4").show().html("帐号格式正确").css("color", "chartreuse")#}
+{#                    } else {#}
+{#                        $(".p4").hide();#}
+{#                        $(".t4").show().html("帐号格式不正确");#}
+{#                        return;#}
+{#                    }#}
+{#                }#}
+{#                //验证码#}
+{#                if ($("#check").val().length <= 0) {#}
+{#                    $(".p5").hide();#}
+{#                    $(".t5").show().html("验证码不能空");#}
+{#                    return;#}
+{#                } else {#}
+{#                    if (!($("#check").val() == $(".yan").html())) {#}
+{#                        $(".yan").html(Random());#}
+{#                        $(".p5").hide();#}
+{#                        $(".t5").show().html("验证码输入不正确")#}
+{#                        return;#}
+{#                    } else {#}
+{#                        $(".p5").hide();#}
+{#                        $(".t5").show().html("验证码输入正确").css("color", "chartreuse")#}
+{#                    }#}
+{##}
+{#                }#}
+{##}
+{#//				   //打勾$("#checkbig").attr("checked");#}
+{#//				   if($(".gou").attr("checked")){#}
+{#//#}
+{#//				   }else{#}
+{#//				   	alert("请阅读飞虎乐购用户协议");#}
+{#//				   	return;#}
+{#//				   }#}
+{##}
+{#                //注册用户#}
+{#                var user = {#}
+{#                    name: $("#name").val(),#}
+{#                    pwd: $("#pasw").val()#}
+{##}
+{#                }#}
+{#                users.push(user);#}
+{#                $.cookie("users", JSON.stringify(users), {expires: 22, path: "/"});#}
+{#                console.log($.cookie("users"));#}
+{#                window.location.href = "denglu.html";#}
+{#            })#}
+{##}
+{#        })html#}
+
+    </script>
+</head>
+
+<body>
+<div class="top">
+    <div class="top">
+        {% if username %}
+            <p>
+
+                用户名: {{ username }}
+            </p>
+            <a href="{% url 'fz:logout' %}">退出</a>
+        {% else %}
+            <div>
+                <a href="{% url 'fz:denglu' %}">登录</a>
+                <a href="{% url 'fz:zhuce' %}">注册</a>
+            </div>
+        {% endif %}
+        <div class="top_right">
+            <ul class="list">
+                <li class="li1"><a href="#">我的账户</a><b class="bb1"><img src="{% static 'img/q1.png' %}"></b></li>
+                <ul class="menu" style="display: none;">
+                    <li class=""><a href="#">账户首页</a></li>
+                    <li><a href="#">我的收藏</a></li>
+                    <li><a href="#">我的订单</a></li>
+                </ul>
+                <li><a href="#">帮助中心</a></li>
+                <li><b><img src="{% static 'img/q2.png' %}"></b><a href="#">网站体验反馈</a></li>
+                <li><b><img src="{% static 'img/phone.png' %}"></b><a href="#">400 883 6900</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <img src="{% static 'img/login_logo.jpg' %}" class="logo">
+    <div class="register">
+        <div class="back">
+            <a href="{% url 'fz:sy' %}">
+                <span class=" glyphicon glyphicon-remove "></span>
+            </a>
+        </div>
+
+        <form action="{% url 'fz:zhuce' %}" method="post">
+            {% csrf_token %}
+
+
+            <div class="form-group has-feedback" id="email">
+                <div class="input-group">
+                    <span class="input-group-addon">邮箱</span>
+
+
+                    <input type="text" class="form-control" placeholder="163邮箱/QQ邮箱.." name="phone" id="email-t"
+                           data-toggle="popover" data-placement="bottom"
+                           data-content="格式不正确">
+
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+
+
+            <div class="form-group has-feedback" id="password">
+                <div class="input-group">
+                    <span class="input-group-addon">密码</span>
+                    <input type="password" class="form-control" placeholder="6~10位数密码" name="password">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+
+
+            <div class="form-group has-feedback" id="password-d">
+                <div class="input-group">
+                    <span class="input-group-addon">确认密码</span>
+                    <input type="password" class="form-control" placeholder="6~10位数密码" id="password-t"
+                           tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="bottom"
+                           data-content="两次密码不一致">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+
+
+            <div class="form-group has-feedback" id="name">
+                <div class="input-group">
+                    <span class="input-group-addon">昵称</span>
+                    <input type="text" class="form-control" placeholder="3~10位数(昵称)" name="username">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+
+{#             submit按钮有特殊功能，提交功能#}
+
+        </form>
+        <button id="subButton">注册</button>
+
+    </div>
+</div>
+<div class="last">
+    <div class="_last">
+        <div class="last_top">
+            <ul>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">法律说明</a></li>
+                <li><a href="#">联系客服</a></li>
+            </ul>
+        </div>
+        <div class="last_bot">
+            <p>增值电信业务经营许可证：粤B2-20130551 | 网站备案：粤ICP备133245 | 食品流通许可证：SP4403112014007826</p>
+            <p>食品流通许可证：SP1103021110002595 </p>
+            <p> Copyright © 2009-2016 深圳富金机网络科技有限公司.All Rights Reserved &nbsp;</p>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</body>
+
+</html>
